@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <H1>TODO APP</H1>
+    <label for="sort">Choose an option to filter tasks:</label>
+<form action="/task/sort" method="POST" id="statusForm">
+  <select name="sort" id="status">
+    <option value="all" <%= sort === "all" ? "selected" : "" %>>All</option>
+    <option value="pending" <%= sort === "pending" ? "selected" : "" %>>Pending</option>
+    <option value="In_progress" <%= sort === "In_progress" ? "selected" : "" %>>In Progress</option>
+    <option value="completed" <%= sort === "completed" ? "selected" : "" %>>Completed</option>
+  </select>
+</form>
+
+    <% for(task of tasks) {%>
+    <div class="task" id="task">
+    <h3><%= task.content %></h3>
+    <h1>status:<%= task.status %></h1>
+    <a href="http://localhost:8080/task/edit/<%= task.id %>">edit task</a>
+    <form action="/task/<%=task.id %>?_method=DELETE" method="post">
+        <button>DELETE</button>
+    </form>
+    </div>
+    <% }%>
+     <a href="http://localhost:8080/task/new" id="edit">add new task</a>
+     <script src="script.js"></script>
+</body>
+</html>

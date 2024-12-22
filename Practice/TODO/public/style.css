@@ -1,0 +1,20 @@
+.task{
+    background-color: blanchedalmond;
+}
+h1 h3{
+    display: inline;
+}
+.task{
+    width:fit-content;
+    height: fit-content;
+    padding: 15px;
+    border:3px solid transparent;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#edit{
+    display: block;
+    margin:auto;
+}
